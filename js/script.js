@@ -13,9 +13,11 @@ const ticketPrice = userKmNumber * 0.21;
 console.log(typeof ticketPrice, ticketPrice);
 
 if (userPassengerAge <= 18) {
-  console.log("applica sconto 20%");
+  let minorDiscountPrice = ticketPrice - (ticketPrice * 20) / 100;
+  console.log(minorDiscountPrice);
 } else if (userPassengerAge >= 65) {
-  console.log("applica sconto 40%");
+  let seniorDiscountPrice = ticketPrice - (ticketPrice * 40) / 100;
+  console.log(seniorDiscountPrice);
 }
 
 // output
