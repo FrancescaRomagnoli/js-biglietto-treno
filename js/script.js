@@ -9,15 +9,29 @@ console.log(typeof userPassengerAge, userPassengerAge);
 
 // elaborazione
 
+let outputPrice;
+
 const ticketPrice = userKmNumber * 0.21;
 console.log(typeof ticketPrice, ticketPrice);
 
 if (userPassengerAge <= 18) {
+  // minors discount
   let minorDiscountPrice = ticketPrice - (ticketPrice * 20) / 100;
-  console.log(minorDiscountPrice);
+  outputPrice = minorDiscountPrice.toFixed(2);
+  console.log(minorDiscountPrice, outputPrice);
 } else if (userPassengerAge >= 65) {
+  // senior discount
   let seniorDiscountPrice = ticketPrice - (ticketPrice * 40) / 100;
-  console.log(seniorDiscountPrice);
+  outputPrice = seniorDiscountPrice.toFixed(2);
+  console.log(seniorDiscountPrice, outputPrice);
+} else {
+  // no discount
+  outputPrice = ticketPrice.toFixed(2);
+  console.log(ticketPrice);
 }
 
 // output
+
+alert(
+  "Il prezzo del tuo biglietto è " + outputPrice + "€ " + "Buon viaggio! 🚅"
+);
